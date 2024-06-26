@@ -491,7 +491,9 @@ utilizando el método de Euler</p>
 
             <details class="quote">
               <summary>Source code in <code>ode/ode.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 83</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
 <span class="normal"> 84</span>
 <span class="normal"> 85</span>
 <span class="normal"> 86</span>
@@ -514,9 +516,7 @@ utilizando el método de Euler</p>
 <span class="normal">103</span>
 <span class="normal">104</span>
 <span class="normal">105</span>
-<span class="normal">106</span>
-<span class="normal">107</span>
-<span class="normal">108</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">euler</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Encuentra el valor de la solución a la ODE</span>
 <span class="sd">    utilizando el método de Euler</span>
 
@@ -651,13 +651,22 @@ utilizando el método RK2</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>tuple</code></td>            <td>
+<td><code>x</code></td>            <td>
+                  <code><span title="numpy.ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>una tupla con dos numpy arrays:
-- x (numpy.ndarray): arreglo con los valores de la variable dependiente
-- t (numpy.ndarray): arreglo con los valores de la variable independiente</p>
+                <p>arreglo con los valores de la variable dependiente</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td><code>t</code></td>            <td>
+                  <code><span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>arreglo con los valores de la variable independiente</p>
               </div>
             </td>
           </tr>
@@ -694,8 +703,7 @@ utilizando el método RK2</p>
 <span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rk2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<span class="normal">45</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rk2</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Encuentra el valor de la solución a la ODE</span>
 <span class="sd">    utilizando el método RK2</span>
 
@@ -711,9 +719,8 @@ utilizando el método RK2</p>
 <span class="sd">        func (function): función f(x, t) tal que y&#39;(t) = f(x, t)</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        tuple: una tupla con dos numpy arrays:</span>
-<span class="sd">            - x (numpy.ndarray): arreglo con los valores de la variable dependiente</span>
-<span class="sd">            - t (numpy.ndarray): arreglo con los valores de la variable independiente</span>
+<span class="sd">        x (numpy.ndarray): arreglo con los valores de la variable dependiente</span>
+<span class="sd">        t (numpy.ndarray): arreglo con los valores de la variable independiente</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
@@ -834,13 +841,22 @@ utilizando el método RK4</p>
       </thead>
       <tbody>
           <tr class="doc-section-item">
-<td><code>tuple</code></td>            <td>
+<td><code>x</code></td>            <td>
+                  <code><span title="numpy.ndarray">ndarray</span></code>
             </td>
             <td>
               <div class="doc-md-description">
-                <p>una tupla con dos numpy arrays:
-- x (numpy.ndarray): arreglo con los valores de la variable dependiente
-- t (numpy.ndarray): arreglo con los valores de la variable independiente</p>
+                <p>arreglo con los valores de la variable dependiente</p>
+              </div>
+            </td>
+          </tr>
+          <tr class="doc-section-item">
+<td><code>t</code></td>            <td>
+                  <code><span title="numpy.ndarray">ndarray</span></code>
+            </td>
+            <td>
+              <div class="doc-md-description">
+                <p>arreglo con los valores de la variable independiente</p>
               </div>
             </td>
           </tr>
@@ -849,7 +865,8 @@ utilizando el método RK4</p>
 
             <details class="quote">
               <summary>Source code in <code>ode/ode.py</code></summary>
-              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">49</span>
+              <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">48</span>
+<span class="normal">49</span>
 <span class="normal">50</span>
 <span class="normal">51</span>
 <span class="normal">52</span>
@@ -878,9 +895,7 @@ utilizando el método RK4</p>
 <span class="normal">75</span>
 <span class="normal">76</span>
 <span class="normal">77</span>
-<span class="normal">78</span>
-<span class="normal">79</span>
-<span class="normal">80</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rk4</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<span class="normal">78</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">rk4</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">n_steps</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Encuentra el valor de la solución a la ODE</span>
 <span class="sd">    utilizando el método RK4</span>
 
@@ -896,9 +911,8 @@ utilizando el método RK4</p>
 <span class="sd">        func (function): función f(x, t) tal que y&#39;(t) = f(x, t)</span>
 
 <span class="sd">    Returns:</span>
-<span class="sd">        tuple: una tupla con dos numpy arrays:</span>
-<span class="sd">            - x (numpy.ndarray): arreglo con los valores de la variable dependiente</span>
-<span class="sd">            - t (numpy.ndarray): arreglo con los valores de la variable independiente</span>
+<span class="sd">        x (numpy.ndarray): arreglo con los valores de la variable dependiente</span>
+<span class="sd">        t (numpy.ndarray): arreglo con los valores de la variable independiente</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">n_steps</span><span class="p">)</span>
