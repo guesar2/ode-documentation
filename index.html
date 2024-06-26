@@ -298,19 +298,16 @@ $$
 Sujetas a la condición incial \( x(0) = 0 \).
 Particularmente, se implementan los siguientes métodos de integración númerica:</p>
 <ul>
-<li>
-<p>Euler: Partiendo de la condición inicial se calculan los valores de \( x \) en el intervalo especificado utilizando la relación,
-$$x(t + h) = x(t) + h f(x, t)$$</p>
-</li>
-<li>
-<p>Runge Kutta de segundo orden (RK2): En este caso se utiliza la relación,
+<li>Euler: Partiendo de la condición inicial se calculan los valores de \( x \) en el intervalo especificado utilizando la relación,
+$$x(t + h) = x(t) + h f(x, t).$$
+El valor de \( h \) determina la resolución de la aproximación, por lo que debe ser un número pequeño para obtener una buena aproximación.</li>
+<li>Runge Kutta de segundo orden (RK2): En este caso se utiliza la relación,
 $$x(t + h) = x(t) + k_2$$
 donde,
 $$ k_1 = h\,f(x,t)
 $$
 $$ k_2 = h\,f(x + k_1/2, t + h/2)
-$$</p>
-</li>
+$$</li>
 <li>Runge Kutta de cuarto orden (RK4): Se utilizan las siguientes relaciones para obtener sucesivamente cada valor de $x$,
 $$ k_1 = hf(x, t) $$
 $$ k_2 = hf(x + \frac{k_1}{2}, t+\frac{h}2) $$
