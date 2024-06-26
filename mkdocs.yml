@@ -1,0 +1,7 @@
+site_name: ODE Docs
+
+theme:
+  name: "material"
+
+plugins: 
+  - mkdocstrings
